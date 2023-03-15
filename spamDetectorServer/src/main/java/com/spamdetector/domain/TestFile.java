@@ -35,19 +35,31 @@ public class TestFile {
     /**
      * @return the name of the file
      */
-    public String getFilename() { return this.filename; }
+    public String getFilename() {
+        return this.filename;
+    }
     /**
      * @return the probability of this file being 'spam'
      */
-    public double getSpamProbability() { return this.spamProbability; }
+    public double getSpamProbability() {
+        return this.spamProbability;
+    }
 
 
     /**
      * @return the actual/real class of the file
      */
-    public String getActualClass() { return this.actualClass; }
+    public String getActualClass() {
+        return this.actualClass;
+    }
 
-    public void setFilename(String value) { this.filename = value; }
-    public void setSpamProbability(double value) { this.spamProbability = value; }
-    public void setActualClass(String value) { this.actualClass = value; }
+    public void setFilename(String value) {
+        this.filename = value;
+    }
+    public void setSpamProbability(double value) {
+        this.spamProbability = value;
+    }
+    public void setActualClass(String value) {
+        this.actualClass = value;
+    }
 }

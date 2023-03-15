@@ -6,15 +6,24 @@ A{
     font-size: x-large;
     color: magenta;
 }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+body {
+    background-image: url("TEST.jpg");
+}
 .parent {
     margin: 1rem;
     padding: 2rem 2rem;
     text-align: right;
 }
 .child1 {
+    display: inline-block;
     border: 1px;
     padding: 1rem 1rem;
     vertical-align: middle;
+    background-color: black;
     color: white;
 }
 .child2{
@@ -31,12 +40,8 @@ table, th, tr {
     background-color: cornflowerblue;
     text-align: center;
 }
-.center {
-    margin-left: auto;
-    margin-right: auto;
-}
 td {
-    background-color: turquoise;
+    background-color: deepskyblue;
     text-align: center;
 }
 h1 {
@@ -57,6 +62,3 @@ h2 {
     text-align: center;
 }
 
-body {
-    background-image: url("TEST.jpg");
-}
