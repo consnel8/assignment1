@@ -16,11 +16,6 @@ function from_spam(spam) {
 }
 
 /**
- * this function gets a name, id and GPA from the user
- * and sends it to `add_record()` which adds the data to `table#chart > tbody`
- */
-
-/**
  * this function takes a name, id and GPA and transforms it into a `<tr>` which
  * gets appended to `table#chart > tbody`
  * @param {String} file the name of the student
@@ -28,24 +23,13 @@ function from_spam(spam) {
  * @param {String} type the student's GPA
  */
 function add_record(file, probability, type) {
-    /**
-     * the smarter more inclined students might abstract the logic of `from_inputs()` into its own function
-     * just like in this file, other than that
-     * the students will have to modify their code to accept `Student` objects
-     */
-
-    /**
-     * the `wrap()` function is optional and most students aren't going to have it
-     */
+    //gets the data from the json file
+    //takes the data and puts it into a wrap to change it into tr information
     const data = [file, probability, type].map((el) => {
         return wrap("td", el);
     });
     const row = wrap("tr", data.join(""));
-
-    /**
-     * the students need to append the new row to the tbody element,
-     * not the table element
-     */
+    //adds a new row into the chart
     document.getElementById("chart").getElementsByTagName("tbody")[0].innerHTML +=
         row;
 }
@@ -59,27 +43,21 @@ function add_record(file, probability, type) {
 function wrap(tag, data) {
     return `<${tag}>${data}</${tag}>`;
 }
-
+//creating the url
 const URL = "http://localhost:8080/spamDetector-1.0/api/spam";
 
-/**
- * anonymous function that executes on script load
- *
- * this is what the students are going to be tested on
- */
 (function () {
     fetch(URL)
         .then((res) => res.json()) // `.json()` returns a promise, not data
         .then((data) => {
-
+            //getting data from the url
             console.log(`Loaded data from ${URL}: `, data);
 
-            // using `in` will not work
-            for (const spam of data["students"]) {
-                // just a wrapper around `add_record()`
+            for (const spam of data["spam"]) {
                 from_spam(spam);
             }
         })
+        //catch an err and output something went wrong with the error
         .catch((err) => {
             console.log("something went wrong: " + err);
         });

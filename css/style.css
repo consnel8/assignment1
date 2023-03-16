@@ -11,7 +11,7 @@ A{
     margin-right: auto;
 }
 body {
-    background-image: url("TEST.jpg");
+    background-image: url("Image.jpg");
 }
 .parent {
     margin: 1rem;
@@ -58,6 +58,7 @@ p{
 
 h2 {
    color: yellow;
+
     font-size: xx-large;
     text-align: center;
 }
